@@ -1,0 +1,65 @@
+*
+{
+    margin: 0%;
+    padding: 0%;
+    font-family: "Mochiy pop p One", sans-serif;    
+}
+.register
+{
+    margin: 10px;
+    padding: 40px 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .5);
+    background-color: black;
+    border-radius: 40px;
+    color: white;
+    /*background-color: #6a11cb;*/
+}
+h2
+{
+    text-align: center;
+}
+table
+{
+    padding: 20px;
+}
+td
+{
+    padding: 10px;
+}
+input[type="text"],input[type="password"],input[type="tel"],input[type="email"],input[type="number"],input[type="date"]
+{
+    width: 200px;
+    border: none;
+    border-bottom: 2px solid orangered;
+    height: 25px;
+    color: aliceblue;
+    background-color: black;
+}
+input:focus
+{
+    outline: none;
+}
+input[type="submit"],input[type="reset"]
+{
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: orangered;
+    color: black;
+    cursor: pointer;
+    margin-left: 23%;
+}
+label.error.fail-alert 
+{
+    color: red;
+    font-size: 13px;
+}
+input.valid.success-alert
+{
+    color: green;
+}

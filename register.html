@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Register Form</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='register.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script src='register.js'></script>
+</head>
+<body>
+    <div class="register">
+        <h2>Register Form</h2>
+        <div class="center"></div>
+        <form name="register-form" id="register-form" method="post" enctype="multipart/form-data" action="http://localhost/DCI/register.php">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>:</td>
+                <td><input type="text" name="nm" placeholder="Enter Your Name" id="nm">
+                </td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td>:</td>
+                <td><input type="number" name="age" placeholder="Enter age" id="age" onpaste="return false;" onkeypress="return IsNumeric(event);" ><br>
+                    <span id="error" style="color: Red; display: none">* Input digits (0 - 9)</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>:</td>
+                <td><input type="email" name="email" placeholder="Enter Email" id="email" >
+                </td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td>:</td>
+                <td><input type="tel" name="mobile" placeholder="Mobile Number" id="mobile" >
+                </td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>:</td>
+                <td><p class="container"><input type="radio" name="gender" value="male" id="gender">&nbsp;Male&nbsp;
+                    <input type="radio" name="gender" value="female" id="gender">&nbsp;Female&nbsp;
+                    <input type="radio" name="gender" value="other" id="gender">&nbsp;Other&nbsp;</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Checkbox</td>
+                <td>:</td>
+                <td><p class="check">
+                    <input type="checkbox" name="checkbox" value="1" id="checkbox1">&nbsp;checkbox1&nbsp;
+                    <input type="checkbox" name="checkbox" value="1,2" id="checkbox2">&nbsp;checkbox2&nbsp;
+                    <input type="checkbox" name="checkbox" value="1,2,3" id="checkbox3">&nbsp;checkbox3&nbsp;</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>:</td>
+                <td><input type="date" name="date" id="date">
+                </td>
+            </tr>
+            <tr>
+                <td>Enter Username</td>
+                <td>:</td>
+                <td><input type="text" name="username" id="username" placeholder="Username" >
+                </td>
+            </tr>
+            <tr>
+                <td>Enter Password</td>
+                <td>:</td>
+                <td><input type="password" name="password" id="password" placeholder="Password" >
+                </td>
+            </tr>
+            <tr>
+                <td>Upload photo</td>
+                <td>:</td>
+                <td><input type="file" name="files" id="files" accept="image/*" >
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="submit" id="submit" name="submit"> 
+        <input type="reset" value="reset">
+        </form>
+    </div>
+</body>
+</html>
