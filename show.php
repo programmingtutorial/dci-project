@@ -1,6 +1,6 @@
 <?php
-$conn=mysqli_connect("localhost","root","","dci");
-if($conn==false)
+include_once("dbconfig.php");
+if($con==false)
 {
     die("something happened".mysqli_connect_error());
 }
