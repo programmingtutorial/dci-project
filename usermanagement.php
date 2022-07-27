@@ -45,13 +45,13 @@ if(!empty($_SESSION['email']) && !empty($_SESSION['username']))
             .frame
             {
                 width: 1095px;
-                height: 500px;
+                height: 550px;
                 margin-left: 250px;
-                margin-top: 3%;
+                margin-top: 1%;
             }
             iframe
             {
-                height: 510px;
+                height: 530px;
                 width: 100%;
             }
             img

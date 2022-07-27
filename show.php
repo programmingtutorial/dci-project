@@ -17,6 +17,7 @@ else
         <script src='https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js'></script>
         <script src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js'></script>
         <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js'></script>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
         <style>
             img
             {
@@ -29,16 +30,10 @@ else
             }
         </style>
     </head>
-    <body>
-    <form action='https://localhost/DCI/show.php' method='post'>
-        <div class='col-md-12 text-center'>
-        <button name='btn' class='btn btn-success btn-sm'>show database</button>
-        </div>
-        </form>";
-    if(isset($_POST['btn']))
-    {
+    <body>";
+
         $show='select * from register';
-        $result=mysqli_query($conn,$show);
+        $result=mysqli_query($con,$show);
         $n=mysqli_num_rows($result);
         if($n==0)
         {
@@ -60,18 +55,19 @@ else
                             <th>PASSWORD</th>
                             <th>PHOTO</th>
                             <th>EDIT</th>
+                            <th>DELETE</th>
                         </tr>";
             while($row=mysqli_fetch_array($result))
             {
                 $file="https://localhost/DCI/files/".$row[10];
 
-                echo "<tr><td>".$row[0]."<td>".$row[1]."<td>".$row[2]."<td>".$row[3]."<td>".$row[4]."<td>".$row[5]."<td>".$row[6]."<td>".$row[7]."<td>".$row[8]."<td>".$row[9]."<td><img src=".$file.">"."<td><a href='#' class='btn btn-info btn-lg'>&#x270f;</a>";
+                echo "<tr><td>".$row[0]."<td>".$row[1]."<td>".$row[2]."<td>".$row[3]."<td>".$row[4]."<td>".$row[5]."<td>".$row[6]."<td>".$row[7]."<td>".$row[8]."<td>".$row[9]."<td><img src=".$file.">"."<td>
+                <a class='edit' href='update.php?id=$row[0]&nm=$row[1]&age=$row[2]&email=$row[3]&mobile=$row[4]&gender=$row[5]&check=$row[6]&date=$row[7]&username=$row[8]&password=$row[9]&photo=$file' title='Edit' data-toggle='tooltip'><i class='material-icons'>&#xE254;</i></a><td><a class='delete' href='' title='Delete' data-toggle='tooltip'><i class='material-icons'>&#xE872;</i></a>";
             }
             echo "</table>
             </body>
             </html>";
         }
-        mysqli_close($conn);
-    }
+        mysqli_close($con);
 }
 ?>
