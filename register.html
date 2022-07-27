@@ -12,7 +12,7 @@
     <style>
        .container
         {
-            width: 600px;
+            width: 500px;
             margin-top: 10px;
             padding: 20px 30px;
         }
@@ -108,6 +108,12 @@
               </div>
 
               <div class="form-group">
+              <div class="showpassword">
+                <input type="checkbox" name="show" onclick="showss()" id="show">&nbsp;&nbsp;show password
+              </div>
+              </div>
+
+              <div class="form-group">
                 <label for="pwd">Upload photo:</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -125,5 +131,39 @@
               <button type="reset" class="btn btn-danger">reset</button>
         </form>
     </div>
+
+    <script>
+      // Disable form submissions if there are invalid fields
+      (function() {
+        "use strict";
+        window.addEventListener("load", function() {
+          // Get the forms we want to add validation styles to
+          var forms = document.getElementsByClassName("needs-validation");
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener("submit", function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add("was-validated");
+            }, false);
+          });
+        }, false);
+      })();
+      
+      function showss()
+      {
+        var s=document.getElementById("pwd");
+        if(s.type === "password")
+        {
+          s.type="text";
+        }
+        else
+        {
+          s.type="password";
+        }
+      }
+      </script>
 </body>
 </html>

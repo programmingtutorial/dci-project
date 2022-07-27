@@ -72,18 +72,22 @@ if($con)
     
                   <div class="form-group">
                     <label for="mobilenumber">Mobile Number:</label>
-                    <input type="text" class="form-control" id="email" placeholder="Enter Email" name="mobilenumber" required value="">
+                    <input type="text" class="form-control" id="email" placeholder="Enter Email" name="mobilenumber" required value="'.$mobile.'">
                     <div class="valid-feedback">Valid.</div>
                     <div class="invalid-feedback">Please fill out this field.</div>
                   </div>
     
                   <div class="form-group">
-                  <h6>Gender:</h6>
-                  <div class="form-check form-check-inline ">
-                    <input type="radio" class="form-check-input" id="male" name="gender" value="male">
-                    <label class="form-check-label" for="male">Male</label>
-                  </div>
-                  <div class="form-check form-check-inline ">
+                  <h6>Gender:</h6>'; 
+                  
+                  if(strcmp($gender,"male")==0)
+                  {
+                    echo'
+                    <div class="form-check form-check-inline ">
+                      <input type="radio" class="form-check-input" id="male" checked name="gender" value="male">
+                      <label class="form-check-label" for="male">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline ">
                     <input type="radio" class="form-check-input" id="female" name="gender" value="female">
                     <label class="form-check-label" for="female">Female</label>
                   </div>
@@ -91,12 +95,49 @@ if($con)
                     <input type="radio" class="form-check-input" id="other" name="gender" value="other">
                     <label class="form-check-label" for="other">Other</label>
                   </div>
-                </div>
-    
-                <div class="form-group">
+                   </div>';
+                  }
+                  elseif(strcmp($gender,"female")==0)
+                  {
+                    echo'
+                    <div class="form-check form-check-inline ">
+                      <input type="radio" class="form-check-input" id="male" name="gender" value="male">
+                      <label class="form-check-label" for="male">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline ">
+                    <input type="radio" class="form-check-input" id="female" name="gender" checked value="female">
+                    <label class="form-check-label" for="female">Female</label>
+                  </div>
+                  <div class="form-check form-check-inline ">
+                    <input type="radio" class="form-check-input" id="other" name="gender" value="other">
+                    <label class="form-check-label" for="other">Other</label>
+                  </div>
+                   </div>';
+                  }
+                  else
+                  {
+                    echo'
+                    <div class="form-check form-check-inline ">
+                      <input type="radio" class="form-check-input" id="male" name="gender" value="male">
+                      <label class="form-check-label" for="male">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline ">
+                    <input type="radio" class="form-check-input" id="female" name="gender" value="female">
+                    <label class="form-check-label" for="female">Female</label>
+                  </div>
+                  <div class="form-check form-check-inline ">
+                    <input type="radio" class="form-check-input" id="other" checked name="gender" value="other">
+                    <label class="form-check-label" for="other">Other</label>
+                  </div>
+                   </div>';
+                  }
+                 
+                  if(strcmp($check,"1")==0)
+                  {
+                echo '<div class="form-group">
                   <h6>Checkbox:</h6>
                   <div class="form-check form-check-inline ">
-                        <input type="checkbox" class="form-check-input" id="male" name="checkbox" value="1">
+                        <input type="checkbox" class="form-check-input" checked id="male" name="checkbox" value="1">
                         <label class="form-check-label" for="Male">checkbox1</label>
                   </div>
                   <div class="form-check form-check-inline ">
@@ -107,29 +148,72 @@ if($con)
                     <input type="checkbox" class="form-check-input" id="other" name="checkbox" value="1,2,3">
                     <label class="form-check-label" for="Male">checkbox3</label>
                     </div>
+                    </div>';
+                  }
+                  elseif(strcmp($check,"1,2")==0)
+                  {
+                    echo '<div class="form-group">
+                    <h6>Checkbox:</h6>
+                    <div class="form-check form-check-inline ">
+                          <input type="checkbox" class="form-check-input" checked id="male" name="checkbox" value="1">
+                          <label class="form-check-label" for="Male">checkbox1</label>
                     </div>
+                    <div class="form-check form-check-inline ">
+                      <input type="checkbox" class="form-check-input" checked id="female" name="checkbox" value="1,2">
+                      <label class="form-check-label" for="Male">checkbox2</label>
+                    </div>
+                      <div class="form-check form-check-inline ">
+                      <input type="checkbox" class="form-check-input" id="other" name="checkbox" value="1,2,3">
+                      <label class="form-check-label" for="Male">checkbox3</label>
+                      </div>
+                      </div>';
+                  }
+                  else
+                  {
+                    echo '<div class="form-group">
+                    <h6>Checkbox:</h6>
+                    <div class="form-check form-check-inline ">
+                          <input type="checkbox" class="form-check-input" checked id="male" name="checkbox" value="1">
+                          <label class="form-check-label" for="Male">checkbox1</label>
+                    </div>
+                    <div class="form-check form-check-inline ">
+                      <input type="checkbox" class="form-check-input" checked id="female" name="checkbox" value="1,2">
+                      <label class="form-check-label" for="Male">checkbox2</label>
+                    </div>
+                      <div class="form-check form-check-inline ">
+                      <input type="checkbox" class="form-check-input" checked id="other" name="checkbox" value="1,2,3">
+                      <label class="form-check-label" for="Male">checkbox3</label>
+                      </div>
+                      </div>';
+                  }
     
-                    <div class="form-group">
+                    echo '<div class="form-group">
                         <label for="date">Date:</label>
-                        <input type="date" class="form-control" id="date" placeholder="select date" name="date" required>
+                        <input type="date" class="form-control" id="date" placeholder="select date" name="date" required value="'.$date.'">
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
                       </div>
     
                       <div class="form-group">
                         <label for="username">Username:</label>
-                        <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" required>
+                        <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" required value="'.$username.'">
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
                       </div>
     
                   <div class="form-group">
                     <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" required>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" required value="'.$password.'">
                     <div class="valid-feedback">Valid.</div>
                     <div class="invalid-feedback">Please fill out this field.</div>
                   </div>
     
+                  <div class="form-group">
+                  <div class="showpassword">
+                    <input type="checkbox" name="show" onclick="showss()" id="show">&nbsp;&nbsp;show password
+                  </div>
+                  </div>
+
                   <div class="form-group">
                     <label for="pwd">Upload photo:</label>
                     <div class="input-group">
@@ -137,8 +221,7 @@ if($con)
                           <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                         </div>
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input" name="file" id="inputGroupFile01"
-                            aria-describedby="inputGroupFileAddon01">
+                          <input type="file" class="custom-file-input" value="'.$file.'" name="file" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
                           <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                         </div>
                       </div>
@@ -148,6 +231,39 @@ if($con)
                   <button type="reset" class="btn btn-danger">reset</button>
             </form>
         </div>
+        <script>
+        // Disable form submissions if there are invalid fields
+        (function() {
+          "use strict";
+          window.addEventListener("load", function() {
+            // Get the forms we want to add validation styles to
+            var forms = document.getElementsByClassName("needs-validation");
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener("submit", function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add("was-validated");
+              }, false);
+            });
+          }, false);
+        })();
+        
+        function showss()
+        {
+          var s=document.getElementById("pwd");
+          if(s.type === "password")
+          {
+            s.type="text";
+          }
+          else
+          {
+            s.type="password";
+          }
+        }
+        </script>
     </body>
     </html>';
 }
