@@ -40,11 +40,10 @@ if($con)
                 <h2>Registration Form</h2>
             </center>
        
-            <form method="post" action="http://localhost/DCI/updateprocess.php" class="needs-validation" novalidate>
+            <form method="post" action="http://localhost/DCI/updateprocess.php?id='.$id.'&photo='.$file.'" class="needs-validation" novalidate>
     
                 <div class="form-group">
-                    <label for="id">Id:</label>
-                    <input type="text" class="form-control" id="email" placeholder="Enter Name" name="name" required disabled value="'.$id.'">
+                    <input type="text" hidden class="form-control" id="email" placeholder="Enter Name" name="id" required disabled value="'.$id.'">
                     <div class="valid-feedback">Valid.</div>
                     <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
@@ -221,13 +220,13 @@ if($con)
                           <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                         </div>
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input" value="'.$file.'" name="file" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                          <input type="file" class="custom-file-input" value="" name="file" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
                           <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                         </div>
                       </div>
                   </div>
     
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" name="sub" class="btn btn-primary">Update</button>
                   <button type="reset" class="btn btn-danger">reset</button>
             </form>
         </div>
@@ -266,6 +265,7 @@ if($con)
         </script>
     </body>
     </html>';
+  
 }
 else
 {

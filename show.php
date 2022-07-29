@@ -62,7 +62,7 @@ else
                 $file="https://localhost/DCI/files/".$row[10];
 
                 echo "<tr><td>".$row[0]."<td>".$row[1]."<td>".$row[2]."<td>".$row[3]."<td>".$row[4]."<td>".$row[5]."<td>".$row[6]."<td>".$row[7]."<td>".$row[8]."<td>".$row[9]."<td><img src=".$file.">"."<td>
-                <a class='edit' href='update.php?id=$row[0]&nm=$row[1]&age=$row[2]&email=$row[3]&mobile=$row[4]&gender=$row[5]&check=$row[6]&date=$row[7]&username=$row[8]&password=$row[9]&photo=$file' title='Edit' data-toggle='tooltip'><i class='material-icons'>&#xE254;</i></a><td><a class='delete' href='' title='Delete' data-toggle='tooltip'><i class='material-icons'>&#xE872;</i></a>";
+                <a class='edit' href='update.php?id=$row[0]&nm=$row[1]&age=$row[2]&email=$row[3]&mobile=$row[4]&gender=$row[5]&check=$row[6]&date=$row[7]&username=$row[8]&password=$row[9]&photo=$row[10]' title='Edit' data-toggle='tooltip'><i class='material-icons'>&#xE254;</i></a><td><a class='delete' href='delete.php?id=$row[0]' title='Delete' data-toggle='tooltip'><i class='material-icons'>&#xE872;</i></a>";
             }
             echo "</table>
             </body>

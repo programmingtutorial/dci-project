@@ -28,6 +28,7 @@ if(!empty($_SESSION['email']) && !empty($_SESSION['username']))
                 margin-left: 70%;
                 margin-top: 5px;
                 border-radius: 20px;
+                background: linear-gradient(to bottom right, #33ccff 1%, #ff99cc 100%);
             }
             button,p
             {
@@ -40,6 +41,9 @@ if(!empty($_SESSION['email']) && !empty($_SESSION['username']))
                 bottom: 0;
                 left: 0;
                 box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+                box-shadow: 5px 20px 10px grey;
+                border: 1px solid;
+                padding: 10px;
                 width: 240px;
             }
             .frame
@@ -59,6 +63,11 @@ if(!empty($_SESSION['email']) && !empty($_SESSION['username']))
                 object-fit : cover;
                 border-radius: 10px;
                 margin-top :15px;
+            }
+            #aaa:hover 
+            {
+                background-color: black ;
+                color: rgba(0, 255, 0, 0.5);
             }
         </style>
     </head>
@@ -91,7 +100,7 @@ if(!empty($_SESSION['email']) && !empty($_SESSION['username']))
                 <p class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
                   <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Management</span>
                 </p>
-                <a href="http://localhost/DCI/show.php" target="show" class="list-group-item list-group-item-action py-2 ripple">
+                <a href="http://localhost/DCI/show.php" target="show" id="aaa" class="list-group-item list-group-item-action py-2 ripple">
                   <i class="fas fa-chart-area fa-fw me-3"></i><span>Users Management</span>
                 </a>
               </div>

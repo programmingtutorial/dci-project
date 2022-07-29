@@ -24,7 +24,7 @@
             <h2>Registration Form</h2>
         </center>
    
-        <form method="post" action="http://localhost/DCI/register.php" class="needs-validation" novalidate>
+        <form method="post" action="http://localhost/DCI/register.php" class="needs-validation" enctype="multipart/form-data" novalidate>
 
             <div class="form-group">
                 <label for="name">Name:</label>
@@ -120,7 +120,7 @@
                       <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                     </div>
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" name="file" id="inputGroupFile01"
+                      <input type="file" class="custom-file-input" accept="image/*" name="file" id="inputGroupFile01"
                         aria-describedby="inputGroupFileAddon01">
                       <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                     </div>
